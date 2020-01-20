@@ -56,8 +56,17 @@ public class User {
 		this.employee_role = employee_role;
 	}
 
-	public User(int userid, String username, String password, String firstname, String lastname,
-			boolean employee_role) {
+	//Sign up Constructor
+	public User(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.employee_role = false;
+	}
+	
+	
+	//Read all user
+	public User(int userid, String username, String password) {
 		super();
 		this.userid = userid;
 		this.username = username;
