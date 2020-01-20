@@ -1,8 +1,14 @@
 package com.revature.test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.util.List;
+
 import org.junit.Test;
+
+import com.revature.dao.CarDAOPostgres;
+import com.revature.pojo.Car;
 
 
 public class Project0Test {
@@ -21,7 +27,10 @@ public class Project0Test {
 	//As a customer, I can view the cars on the lot.
 	@Test
 	public void  testCustomerCarView() {
-		assertTrue(false);
+		//TODO: Replace action that returns the carID
+		CarDAOPostgres carDAO = new CarDAOPostgres();
+		List<Car> cars = carDAO.readAllCars();
+		assertEquals(cars.get(0).getCarId(), carDAO.readAllCars().get(0).getCarId());
 	}
 	
 	//As a customer, I can make an offer for a car.
@@ -57,7 +66,13 @@ public class Project0Test {
 	//As an employee, I can add a car to the lot.
 	@Test
 	public void  testAddCar() {
-		assertTrue(false);
+		//Test Variables
+		String make = "Unit", model = "Test", year = "2020-01-01";
+		Double price = 20000D;
+		CarDAOPostgres carDAO = new CarDAOPostgres();
+		carDAO.createCar(new Car(make, model, year, price));
+		
+		assertEquals("Unit", carDAO.readLastCar());
 	}
 	
 	//As an employee, I can accept or reject an offer for a car.

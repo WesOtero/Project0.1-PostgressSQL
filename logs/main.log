@@ -1,1 +1,35 @@
-2020-01-19 22:16:54,347 -0500 [main] INFO  (LogUtil.java:26) - Works
+
+2020-01-20 15:21:13,608 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-20 15:21:13,668 -0500 [main] TRACE (LogUtil.java:30) - Method org.postgresql.jdbc.PgResultSet.getNString(int) is not yet implemented.
+2020-01-20 15:21:13,684 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed.
+2020-01-20 15:21:14,090 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-20 15:21:14,137 -0500 [main] INFO  (LogUtil.java:26) - Vehicle added.
+2020-01-20 15:21:14,137 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
+2020-01-20 15:21:14,512 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-20 15:21:14,559 -0500 [main] TRACE (LogUtil.java:30) - Method org.postgresql.jdbc.PgResultSet.getNString(int) is not yet implemented.
+2020-01-20 15:21:14,559 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed.
+2020-01-20 15:23:53,684 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-20 15:23:53,748 -0500 [main] INFO  (LogUtil.java:26) - Vehicle added.
+2020-01-20 15:23:53,748 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
+2020-01-20 15:23:54,138 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-20 15:23:54,201 -0500 [main] TRACE (LogUtil.java:30) - Method org.postgresql.jdbc.PgResultSet.getNString(int) is not yet implemented.
+2020-01-20 15:23:54,201 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed.
+2020-01-20 15:28:24,999 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-20 15:28:25,058 -0500 [main] INFO  (LogUtil.java:26) - Vehicle added.
+2020-01-20 15:28:25,058 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
+2020-01-20 15:28:25,463 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-20 15:28:25,510 -0500 [main] TRACE (LogUtil.java:30) - Operation requires a scrollable ResultSet, but this ResultSet is FORWARD_ONLY.
+2020-01-20 15:28:25,510 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed.
+2020-01-20 15:48:06,592 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-20 15:50:19,406 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-20 15:50:19,891 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-20 15:51:27,106 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-20 15:51:27,577 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-20 15:52:29,231 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-20 15:52:29,355 -0500 [main] INFO  (LogUtil.java:26) - Vehicle added.
+2020-01-20 15:52:29,355 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
+2020-01-20 15:52:29,789 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-20 15:52:29,851 -0500 [main] INFO  (LogUtil.java:26) - Last car was return.
+2020-01-20 15:52:29,851 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed.
+2020-01-20 15:52:30,252 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-20 15:52:30,724 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
