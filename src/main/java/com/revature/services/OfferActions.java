@@ -1,8 +1,8 @@
 package com.revature.services;
 
-public interface Offer {
+public interface OfferActions {
 	// As a customer, I can make an offer for a car.
-	public void addOffer();
+	public void addOffer(Integer userid, Integer carid, Double amount);
 	
 	// As an employee, I can accept or reject an offer for a car.
 	public void acceptOffer();

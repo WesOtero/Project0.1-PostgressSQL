@@ -16,6 +16,5 @@ public interface UserDAO {
 
 	public List<User> readAllUsers();
 
-	public List<User> readUsersByType(String type);
 
 }

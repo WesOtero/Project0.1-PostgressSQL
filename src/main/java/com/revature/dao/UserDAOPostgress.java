@@ -81,10 +81,6 @@ public class UserDAOPostgress implements UserDAO {
 		return null;
 	}
 
-	@Override
-	public List<User> readUsersByType(String type) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }

@@ -16,5 +16,5 @@ public interface CarDAO {
 
 	public List<Car> readAllCars();
 
-	public List<Car> readCarsByType(String type);
+	public List<Car> readCarsOwned(Integer customerId);
 }

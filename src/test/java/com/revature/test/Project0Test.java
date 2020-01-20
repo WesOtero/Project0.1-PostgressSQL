@@ -10,6 +10,7 @@ import org.junit.Test;
 import com.revature.dao.CarDAOPostgres;
 import com.revature.pojo.Car;
 import com.revature.services.AuthenticationService;
+import com.revature.services.OfferService;
 import com.revature.services.SignupService;
 
 public class Project0Test {
@@ -41,6 +42,8 @@ public class Project0Test {
 	// As a customer, I can make an offer for a car.
 	@Test
 	public void testCustomerOffer() {
+		OfferService offerServ = new OfferService();
+		offerServ.addOffer(1, 1, 20000D);
 		assertTrue(false);
 	}
 
