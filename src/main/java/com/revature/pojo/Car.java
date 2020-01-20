@@ -6,6 +6,7 @@ public class Car {
 	private String model;
 	private String year;
 	private Double price;
+	private boolean owned;
 
 	public Integer getCarId() {
 		return carId;
@@ -47,4 +48,27 @@ public class Car {
 		this.price = price;
 	}
 
+	public boolean isOwned() {
+		return owned;
+	}
+
+	public void setOwned(boolean owned) {
+		this.owned = owned;
+	}
+	
+	public Car() {
+		super();
+		this.owned = false;
+	}
+
+	public Car(String make, String model, String year, Double price) {
+		super();
+		this.make = make;
+		this.model = model;
+		this.year = year;
+		this.price = price;
+		this.owned = false;
+	}
+	
+	
 }

@@ -55,6 +55,7 @@ public class ConnectionFactory {
 
 		try {
 			conn = DriverManager.getConnection(url, user, password);
+			System.out.println(conn.getClientInfo(url));
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
