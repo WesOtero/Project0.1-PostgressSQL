@@ -5,16 +5,17 @@ import java.util.List;
 import com.revature.pojo.User;
 
 public interface UserDAO {
-	public void createPet(User pet);
 
-	public User readPet(int id);
+	public void createUser(User pet);
 
-	public void updatePet(User pet, int id);
+	public User readUser(int id);
 
-	public void deletePet(User pet);
+	public void updateUser(User pet, int id);
 
-	public List<User> readAllPets();
+	public void deleteUser(User user);
 
-	public List<User> readPetsByType(String type);
+	public List<User> readAllUsers();
+
+	public List<User> readUsersByType(String type);
 
 }

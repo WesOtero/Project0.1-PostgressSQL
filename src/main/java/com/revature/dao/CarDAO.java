@@ -5,15 +5,16 @@ import java.util.List;
 import com.revature.pojo.Car;
 
 public interface CarDAO {
-	public void createPet(Car pet);
 
-	public Car readPet(int id);
+	public void createCar(Car pet);
 
-	public void updatePet(Car pet, int id);
+	public Car readCar(int id);
 
-	public void deletePet(Car pet);
+	public void updateCar(Car car, int id);
 
-	public List<Car> readAllPets();
+	public void deleteCar(Car car);
 
-	public List<Car> readPetsByType(String type);
+	public List<Car> readAllCars();
+
+	public List<Car> readCarsByType(String type);
 }

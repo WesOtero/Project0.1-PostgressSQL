@@ -1,12 +1,18 @@
 package com.revature.pojo;
 
-public class User {
+public class Customer extends User {
+
 	private int userid;
 	private String username;
 	private String password;
 	private String firstname;
 	private String lastname;
 	private boolean employee_role;
+
+	public Customer() {
+		super();
+		this.employee_role = false;
+	}
 
 	public int getUserid() {
 		return userid;
