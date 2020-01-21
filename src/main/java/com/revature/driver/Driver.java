@@ -5,6 +5,7 @@ import java.util.Scanner;
 import com.revature.pojo.User;
 import com.revature.services.AddCarService;
 import com.revature.services.AuthenticationService;
+import com.revature.services.CarRemovalService;
 import com.revature.services.OfferService;
 import com.revature.services.PaymentService;
 import com.revature.services.SignupService;
@@ -235,14 +236,18 @@ public class Driver {
 	}
 
 	// EmployeeMenu
-	public static void employeeMenu(User username) {
+	public static void employeeMenu(User user) {
 		AddCarService addCarServ = new AddCarService();
+		ViewCarService viewCarServ = new ViewCarService();
+		OfferService offerServ = new OfferService();
+		CarRemovalService carRemvServ = new CarRemovalService();
+		PaymentService payServ = new PaymentService();
 		
-		String userInput, carId, make, model, year, customer;
+		String userInput, offerId, carId, make, model, year, customer;
 		Double price;
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.println("\n====EMPLOYEE MENU==== \n Hello " + username + "!");
+		System.out.println("\n====EMPLOYEE MENU==== \n Hello " + user.getUsername() + "!");
 		System.out.println(
 				"|=1. Add Cars: \n|=2. View Lot: \n|=3. Accept Offers: \n|=4. Remove Car From Lot: \n|=5. View All Payments: \n|=6. Signout");
 		userInput = scanner.nextLine();
@@ -271,55 +276,56 @@ public class Driver {
 				System.out.println("Add Another Car? (Y)");
 				exit = scanner.nextLine().toUpperCase();
 			} while (exit.equals("Y"));
-			employeeMenu(username);
+			employeeMenu(user);
 			break;
 		case "2":
-			carViewServ.employeeCarView();
-			employeeMenu(username);
+			//Not needed
+//			carViewServ.employeeCarView();
+			employeeMenu(user);
 			break;
 		case "3":
 			System.out.println("\n==ACCEPT OFFER==");
 			System.out.println("Enter VIN: ");
-			vinNumber = scanner.nextLine();
-			carBidServ.getCurentOffers(vinNumber);
+			carId = scanner.nextLine();
+			//TODO: FIX
+			viewCarServ.customerCarView();
+			
 			System.out.println("Do you want to accept any offers?");
 			userInput = scanner.nextLine();
-			switch (userInput) {
+			switch (userInput.toUpperCase()) {
 			case "Y":
-				System.out.println("Enter Customer: ");
-				customer = scanner.nextLine();
-				carBidServ.acceptOffer(customer, vinNumber);
-				customer = "";
-				vinNumber = "";
-				employeeMenu(username);
+				System.out.println("Enter Offer ID: ");
+				offerId = scanner.nextLine();
+				offerServ.acceptOffer(Integer.parseInt(offerId));
+				employeeMenu(user);
 				break;
 			case "N":
-				employeeMenu(username);
+				employeeMenu(user);
 			default:
-				LoggerUtil.warn("Invalid Entry");
+				LogUtil.warn("Invalid Entry");
 			}
 
 			break;
 		case "4":
 			System.out.println("==REMOVE CARS==");
-			carViewServ.employeeCarView();
+			viewCarServ.customerCarView();
 			System.out.println("Enter Car VIN:");
-			vinNumber = scanner.nextLine();
-			carRemvServ.removeCar(vinNumber);
-			vinNumber = "";
-			employeeMenu(username);
+			carId = scanner.nextLine();
+			carRemvServ.removeCar(Integer.parseInt(carId));
+			carId = "";
+			employeeMenu(user);
 			break;
 		case "5":
 			System.out.println("==VIEW ALL PAYMENTS==");
-			custPayServ.employeePaymentView();
-			employeeMenu(username);
+			payServ.viewAllPayments();
+			employeeMenu(user);
 			break;
 		case "6":
-			LoggerUtil.info("User " + username + " =logged out=");
+			LogUtil.info("User " + user.getUsername() + " =logged out=");
 			mainMenu();
 			break;
 		default:
-			LoggerUtil.warn("Invalid choice, try again...");
+			LogUtil.warn("Invalid choice, try again...");
 			break;
 		}
 	}

@@ -1,3 +1,7 @@
 2020-01-20 23:29:14,292 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
 2020-01-20 23:29:14,345 -0500 [main] INFO  (LogUtil.java:26) - User added.
 2020-01-20 23:29:14,345 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
+2020-01-21 01:32:49,690 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 01:32:49,758 -0500 [main] INFO  (LogUtil.java:26) - User added.
+2020-01-21 01:32:49,758 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
+2020-01-21 01:33:01,153 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
