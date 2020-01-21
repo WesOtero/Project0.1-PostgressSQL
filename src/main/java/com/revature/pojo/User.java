@@ -4,8 +4,8 @@ public class User {
 	private int userid;
 	private String username;
 	private String password;
-	private String firstname;
-	private String lastname;
+	private Double monthlyPayment;
+	private Double remainingBalance;
 	private boolean employee_role;
 
 	public int getUserid() {
@@ -32,20 +32,20 @@ public class User {
 		this.password = password;
 	}
 
-	public String getFirstname() {
-		return firstname;
+	public Double getMonthlyPayment() {
+		return monthlyPayment;
 	}
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setMonthlyPayment(Double monthlyPayment) {
+		this.monthlyPayment = monthlyPayment;
 	}
 
-	public String getLastname() {
-		return lastname;
+	public Double getRemainingBalance() {
+		return remainingBalance;
 	}
 
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setRemainingBalance(Double remainingBalance) {
+		this.remainingBalance = remainingBalance;
 	}
 
 	public boolean isEmployee_role() {
@@ -56,4 +56,32 @@ public class User {
 		this.employee_role = employee_role;
 	}
 
+	//Sign up Constructor
+//	public User(String username, String password) {
+//		super();
+//		this.username = username;
+//		this.password = password;
+//		this.employee_role = false;
+//	}
+//	
+	
+	//Read all user
+	public User(int userid, String username, String password) {
+		super();
+		this.userid = userid;
+		this.username = username;
+		this.password = password;
+	}
+	//Updated Constructor
+
+	public User(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.monthlyPayment = 0D;
+		this.remainingBalance = 0D;
+		this.employee_role = false;
+	}
+	
+	
 }

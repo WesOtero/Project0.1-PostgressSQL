@@ -43,8 +43,10 @@ public class ConnectionFactory {
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
+			LogUtil.trace(e.getMessage());
 		} catch (IOException e) {
 			e.printStackTrace();
+			LogUtil.trace(e.getMessage());
 		}
 
 	}
@@ -55,9 +57,10 @@ public class ConnectionFactory {
 
 		try {
 			conn = DriverManager.getConnection(url, user, password);
-			System.out.println(conn.getClientInfo(url));
+			LogUtil.trace("Connected to DB.");
 		} catch (SQLException e) {
 			e.printStackTrace();
+			LogUtil.trace(e.getMessage());
 		}
 
 		return conn;

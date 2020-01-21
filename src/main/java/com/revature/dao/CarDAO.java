@@ -10,11 +10,13 @@ public interface CarDAO {
 
 	public Car readCar(int id);
 
-	public void updateCar(Car car, int id);
+	public void updateCarOwner(Integer userId, Integer carId, Double amount);
 
-	public void deleteCar(Car car);
+	public void deleteCar(Integer carId);
 
 	public List<Car> readAllCars();
+	
+	public List<Car> readAllCarsOnLot();
 
-	public List<Car> readCarsByType(String type);
+	public List<Car> readCarsOwned(Integer customerId);
 }

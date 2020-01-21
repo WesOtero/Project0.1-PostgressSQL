@@ -61,8 +61,20 @@ public class Car {
 		this.owned = false;
 	}
 
+	//For insertion to DB
 	public Car(String make, String model, String year, Double price) {
 		super();
+		this.make = make;
+		this.model = model;
+		this.year = year;
+		this.price = price;
+		this.owned = false;
+	}
+	
+	//For Reading from DB
+	public Car(Integer carid, String make, String model, String year, Double price, boolean owners, Integer userId) {
+		super();
+		this.carId = carid;
 		this.make = make;
 		this.model = model;
 		this.year = year;
