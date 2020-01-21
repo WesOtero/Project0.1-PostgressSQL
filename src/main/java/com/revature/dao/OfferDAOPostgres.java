@@ -41,7 +41,7 @@ public class OfferDAOPostgres implements OfferDAO {
 
 	@Override
 	public Offer readOffer(Integer userId, Integer carId) {
-		String sql = "Select * from user where userid = '" + userId + "AND carid ='" + carId+"'";
+		String sql = "Select * from user where userid = '" + userId + "AND carid ='" + carId + "'";
 
 		Connection conn = ConnectionFactory.getConnection();
 
@@ -72,8 +72,27 @@ public class OfferDAOPostgres implements OfferDAO {
 	}
 
 	@Override
-	public void deleteOffer(Offer offer) {
+	public void deleteOffer(Integer offerId) {
 		// TODO Auto-generated method stub
+		String sql = "DELETE FROM offer WHERE offerid ='" + offerId + "'";
+		Connection conn = ConnectionFactory.getConnection();
+
+		try {
+			Statement stmt = conn.createStatement();
+			stmt.executeUpdate(sql);
+			LogUtil.info("User Record Updated.");
+		} catch (SQLException e) {
+			LogUtil.trace(e.getMessage());
+
+		} finally {
+			try {
+				conn.close();
+				LogUtil.trace("Connection Closed");
+			} catch (SQLException e) {
+				e.printStackTrace();
+				LogUtil.trace(e.getMessage());
+			}
+		}
 
 	}
 
@@ -89,4 +108,33 @@ public class OfferDAOPostgres implements OfferDAO {
 		return null;
 	}
 
+	@Override
+	public void acceptOffer(Integer offerId) {
+		// TODO Auto-generated method stub
+		String sql = "UPDATE offer SET accepted = true WHERE offerId =" + offerId;
+		Connection conn = ConnectionFactory.getConnection();
+
+		try {
+			Statement stmt = conn.createStatement();
+			stmt.executeUpdate(sql);
+			LogUtil.info("Offer Updated.");
+		} catch (SQLException e) {
+			LogUtil.trace(e.getMessage());
+
+		} finally {
+			try {
+				conn.close();
+				LogUtil.trace("Connection Closed");
+			} catch (SQLException e) {
+				e.printStackTrace();
+				LogUtil.trace(e.getMessage());
+			}
+		}
+	}
+
+//	@Override
+//	public void rejectOffer(Integer offerId) {
+//		// TODO Auto-generated method stub
+//		
+//	}
 }

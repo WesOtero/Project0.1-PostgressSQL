@@ -10,8 +10,10 @@ public interface OfferDAO {
 	public Offer readOffer(Integer userId, Integer carId);
 
 	public void updateOffer(Offer offer, int id);
+	
+	public void acceptOffer(Integer offerId);
 
-	public void deleteOffer(Offer offer);
+	public void deleteOffer(Integer offerId);
 
 	public List<Offer> readAllOffers();
 

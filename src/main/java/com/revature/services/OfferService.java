@@ -13,15 +13,18 @@ public class OfferService implements OfferActions{
 	}
 
 	@Override
-	public void acceptOffer() {
+	public void acceptOffer(Integer offerId) {
 		// TODO Auto-generated method stub
+		OfferDAOPostgres offerDAO = new OfferDAOPostgres();
+		offerDAO.acceptOffer(offerId);
 		
 	}
 
 	@Override
-	public void rejectOffer() {
+	public void rejectOffer(Integer offerId) {
 		// TODO Auto-generated method stub
-		
+		OfferDAOPostgres offerDAO = new OfferDAOPostgres();
+		offerDAO.deleteOffer(offerId);
 	}
 
 	@Override

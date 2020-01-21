@@ -8,6 +8,7 @@ import java.util.List;
 import org.junit.Test;
 
 import com.revature.dao.CarDAOPostgres;
+import com.revature.dao.OfferDAOPostgres;
 import com.revature.pojo.Car;
 import com.revature.services.AuthenticationService;
 import com.revature.services.CarRemovalService;
@@ -89,14 +90,18 @@ public class Project0Test {
 		assertEquals("Unit", carDAO.readLastCar());
 	}
 
-	// As an employee, I can accept or reject an offer for a car.
+	// -As an employee, I can accept or reject an offer for a car.
 	@Test
 	public void testAcceptOffer() {
+		OfferService offerServ = new OfferService();
+		offerServ.rejectOffer(100);
 		assertTrue(false);
 	}
-
+	//-
 	@Test
 	public void testRejectOffer() {
+		OfferService offerServ = new OfferService();
+		offerServ.rejectOffer(100);
 		assertTrue(false);
 	}
 
@@ -112,7 +117,7 @@ public class Project0Test {
 	// accepted.
 	@Test
 	public void testRejectAllPending() {
-		
+
 		assertTrue(false);
 	}
 }
