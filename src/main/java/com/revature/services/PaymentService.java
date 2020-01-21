@@ -1,6 +1,8 @@
 package com.revature.services;
 
-public class PaymentService implements Payment{
+import com.revature.dao.PaymentDAOPostgress;
+
+public class PaymentService implements PaymentActions{
 
 	@Override
 	public void viewAllPayments() {
@@ -15,9 +17,10 @@ public class PaymentService implements Payment{
 	}
 
 	@Override
-	public void calculatePayment() {
+	public void createPayments(Integer userId, Integer carId, Integer offerId) {
 		// TODO Auto-generated method stub
-		
+		PaymentDAOPostgress paymentDAO = new PaymentDAOPostgress();
+		paymentDAO.createPayment(userId, carId, offerId);
 	}
 
 }

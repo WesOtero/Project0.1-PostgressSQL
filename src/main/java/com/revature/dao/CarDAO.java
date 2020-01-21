@@ -12,9 +12,11 @@ public interface CarDAO {
 
 	public void updateCar(Car car, int id);
 
-	public void deleteCar(Car car);
+	public void deleteCar(Integer carId);
 
 	public List<Car> readAllCars();
+	
+	public List<Car> readAllCarsOnLot();
 
 	public List<Car> readCarsOwned(Integer customerId);
 }

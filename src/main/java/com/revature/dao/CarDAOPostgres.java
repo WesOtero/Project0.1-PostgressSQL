@@ -50,15 +50,62 @@ public class CarDAOPostgres implements CarDAO {
 
 	}
 
+	//After car is deleted the next time the user request to view the lot it should query the table again.
 	@Override
-	public void deleteCar(Car car) {
+	public void deleteCar(Integer carId) {
 		// TODO Auto-generated method stub
+		String sql = "Delete from car where carid = ;'" + carId + "'";
 
+		Connection conn = ConnectionFactory.getConnection();
+
+		try {
+			Statement stmt = conn.createStatement();
+			stmt.executeUpdate(sql);
+			LogUtil.info("Car Deleted.");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
 	}
 
 	@Override
 	public List<Car> readAllCars() {
 		String sql = "Select * from car";
+
+		Connection conn = ConnectionFactory.getConnection();
+
+		List<Car> carList = new ArrayList<>();
+
+		try {
+			Statement stmt = conn.createStatement();
+			ResultSet resultSet = stmt.executeQuery(sql);
+
+			while (resultSet.next()) {
+				carList.add(new Car(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3),
+						resultSet.getString(4), resultSet.getDouble(5)));
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return carList;
+	}
+	
+
+	public List<Car> readAllCarsOnLot(){
+		String sql = "Select * from car where owners = false";
 
 		Connection conn = ConnectionFactory.getConnection();
 

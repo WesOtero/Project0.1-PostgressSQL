@@ -10,18 +10,20 @@ import org.junit.Test;
 import com.revature.dao.CarDAOPostgres;
 import com.revature.pojo.Car;
 import com.revature.services.AuthenticationService;
+import com.revature.services.CarRemovalService;
 import com.revature.services.OfferService;
 import com.revature.services.SignupService;
+import com.revature.services.ViewCarService;
 
 public class Project0Test {
-	// As a user, I can login.
+	// -As a user, I can login.
 	@Test
 	public void testUserLogin() {
 		AuthenticationService authServ = new AuthenticationService();
 		assertTrue(authServ.authenticate(1, "Unit", "Testing"));
 	}
 
-	// As a user, I can register for a customer account.
+	// -As a user, I can register for a customer account.
 	@Test
 	public void testUserRegistration() {
 		SignupService signUpServ = new SignupService();
@@ -30,16 +32,16 @@ public class Project0Test {
 		assertTrue(false);
 	}
 
-	// As a customer, I can view the cars on the lot.
+	// -As a customer, I can view the cars on the lot.
 	@Test
 	public void testCustomerCarView() {
 		// TODO: Replace action that returns the carID
 		CarDAOPostgres carDAO = new CarDAOPostgres();
-		List<Car> cars = carDAO.readAllCars();
+		List<Car> cars = carDAO.readAllCarsOnLot();
 		assertEquals(cars.get(0).getCarId(), carDAO.readAllCars().get(0).getCarId());
 	}
 
-	// As a customer, I can make an offer for a car.
+	// -As a customer, I can make an offer for a car.
 	@Test
 	public void testCustomerOffer() {
 		OfferService offerServ = new OfferService();
@@ -47,9 +49,11 @@ public class Project0Test {
 		assertTrue(false);
 	}
 
-	// As a customer, I can view the cars that I own.
+	// -As a customer, I can view the cars that I own.
 	@Test
 	public void testCustomerCarsOwnedView() {
+		ViewCarService viewCarServ = new ViewCarService();
+		viewCarServ.customerCarView();
 		assertTrue(false);
 	}
 
@@ -59,9 +63,11 @@ public class Project0Test {
 		assertTrue(false);
 	}
 
-	// As an employee, I can remove a car from the lot.
+	// -As an employee, I can remove a car from the lot.
 	@Test
 	public void testRemoveCar() {
+		CarRemovalService carRemvServ = new CarRemovalService();
+		carRemvServ.removeCar(100);
 		assertTrue(false);
 	}
 
@@ -71,7 +77,7 @@ public class Project0Test {
 		assertTrue(false);
 	}
 
-	// As an employee, I can add a car to the lot.
+	// -As an employee, I can add a car to the lot.
 	@Test
 	public void testAddCar() {
 		// Test Variables
@@ -79,7 +85,6 @@ public class Project0Test {
 		Double price = 20000D;
 		CarDAOPostgres carDAO = new CarDAOPostgres();
 		carDAO.createCar(new Car(make, model, year, price));
-
 		assertEquals("Unit", carDAO.readLastCar());
 	}
 
