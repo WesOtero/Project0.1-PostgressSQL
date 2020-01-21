@@ -64,8 +64,29 @@ public class UserDAOPostgress implements UserDAO {
 	}
 
 	@Override
-	public void updateUser(User pet, int id) {
+	// Updates user payment by using the business logic of a 2 year payment plan
+	public void updateUserPayment(Double offer, Integer userId) {
 		// TODO Auto-generated method stub
+		String sql = "UPDATE car SET monthlypayment ='" + offer / 24 + "', SET remainingbalance ='" + offer
+				+ "' WHERE userid =" + userId + "'";
+		Connection conn = ConnectionFactory.getConnection();
+
+		try {
+			Statement stmt = conn.createStatement();
+			stmt.executeUpdate(sql);
+			LogUtil.info("User Record Updated.");
+		} catch (SQLException e) {
+			LogUtil.trace(e.getMessage());
+
+		} finally {
+			try {
+				conn.close();
+				LogUtil.trace("Connection Closed");
+			} catch (SQLException e) {
+				e.printStackTrace();
+				LogUtil.trace(e.getMessage());
+			}
+		}
 
 	}
 
@@ -80,7 +101,5 @@ public class UserDAOPostgress implements UserDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	
 
 }

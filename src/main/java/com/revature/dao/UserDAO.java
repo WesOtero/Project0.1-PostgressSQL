@@ -10,7 +10,7 @@ public interface UserDAO {
 
 	public User readUser(int id);
 
-	public void updateUser(User pet, int id);
+	public void updateUserPayment(Double offer, Integer userId);
 
 	public void deleteUser(User user);
 

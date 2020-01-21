@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.revature.pojo.Car;
-import com.revature.pojo.User;
 import com.revature.util.ConnectionFactory;
 import com.revature.util.LogUtil;
 
@@ -65,9 +64,31 @@ public class CarDAOPostgres implements CarDAO {
 		return null;
 	}
 
+	// Once I update the record of the car the next time the car list is queried it
+	// will show the updated record
 	@Override
-	public void updateCar(Car car, int id) {
+	public void updateCarOwner(Integer userId, Integer carId, Double amount) {
 		// TODO Auto-generated method stub
+		// Updates a car owner and price based on the offer
+		String sql = "UPDATE car SET owners = true, SET userid ='" + userId + "', SET price ='" + amount + "' WHERE carid =" + carId + "'";
+		Connection conn = ConnectionFactory.getConnection();
+
+		try {
+			Statement stmt = conn.createStatement();
+			stmt.executeUpdate(sql);
+			LogUtil.info("Vehicle Record Updated.");
+		} catch (SQLException e) {
+			LogUtil.trace(e.getMessage());
+
+		} finally {
+			try {
+				conn.close();
+				LogUtil.trace("Connection Closed");
+			} catch (SQLException e) {
+				e.printStackTrace();
+				LogUtil.trace(e.getMessage());
+			}
+		}
 
 	}
 

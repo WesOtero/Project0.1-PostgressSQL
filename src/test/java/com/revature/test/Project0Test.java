@@ -12,6 +12,7 @@ import com.revature.pojo.Car;
 import com.revature.services.AuthenticationService;
 import com.revature.services.CarRemovalService;
 import com.revature.services.OfferService;
+import com.revature.services.PaymentService;
 import com.revature.services.SignupService;
 import com.revature.services.ViewCarService;
 
@@ -99,9 +100,11 @@ public class Project0Test {
 		assertTrue(false);
 	}
 
-	// As the system, I can calculate the monthly payment.
+	// -As the system, I can calculate the monthly payment.
 	@Test
 	public void testCalculatePayment() {
+		PaymentService payServ = new PaymentService();
+		payServ.calculatePayment(100, 100);
 		assertTrue(false);
 	}
 
@@ -109,6 +112,7 @@ public class Project0Test {
 	// accepted.
 	@Test
 	public void testRejectAllPending() {
+		
 		assertTrue(false);
 	}
 }
