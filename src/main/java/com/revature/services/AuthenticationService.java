@@ -20,4 +20,12 @@ public class AuthenticationService implements Authenticate {
 		return false;
 	}
 
+	@Override
+	public User getUserByUsername(String username) {
+		// TODO Auto-generated method stub
+		UserDAOPostgress userDAO = new UserDAOPostgress();
+		return userDAO.readUserByUserame(username);
+		
+	}
+
 }

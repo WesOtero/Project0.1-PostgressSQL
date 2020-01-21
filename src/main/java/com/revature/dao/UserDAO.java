@@ -10,6 +10,8 @@ public interface UserDAO {
 
 	public User readUser(int id);
 
+	public User readUserByUserame(String username);
+	
 	public void updateUserPayment(Double offer, Integer userId);
 
 	public void deleteUser(User user);

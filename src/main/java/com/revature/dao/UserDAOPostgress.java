@@ -63,6 +63,32 @@ public class UserDAOPostgress implements UserDAO {
 		return null;
 	}
 
+	//Return user
+	@Override
+	public User readUserByUserame(String username) {
+		String sql = "Select * from user where userid = '" + username + "'";
+
+		Connection conn = ConnectionFactory.getConnection();
+
+		User user;
+
+		try {
+			Statement stmt = conn.createStatement();
+			ResultSet resultSet = stmt.executeQuery(sql);
+			user = new User(resultSet.getInt(1), resultSet.getNString(2), resultSet.getNString(3));
+			return user;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
+	
 	@Override
 	// Updates user payment by using the business logic of a 2 year payment plan
 	public void updateUserPayment(Double offer, Integer userId) {
