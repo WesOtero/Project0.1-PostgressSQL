@@ -17,6 +17,7 @@ import com.revature.services.SignupService;
 import com.revature.services.ViewCarService;
 
 public class Project0Test {
+	//Don't pass any parameters
 	// -As a user, I can login.
 	@Test
 	public void testUserLogin() {
@@ -60,7 +61,8 @@ public class Project0Test {
 
 	// -As a customer, I can view my remaining payments for a car.
 	@Test
-	public void testRemainingPayments(Integer userId) {
+	public void testRemainingPayments() {
+		int userId = 6;
 		PaymentService paymentServ = new PaymentService();
 		paymentServ.userRemaningBlance(userId);
 		assertTrue(false);

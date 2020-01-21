@@ -156,10 +156,10 @@ public class CarDAOPostgres implements CarDAO {
 		try {
 			Statement stmt = conn.createStatement();
 			ResultSet resultSet = stmt.executeQuery(sql);
-
+			resultSet.next();
 			while (resultSet.next()) {
-				carList.add(new Car(resultSet.getInt(1), resultSet.getNString(2), resultSet.getNString(3),
-						resultSet.getNString(4), resultSet.getDouble(5), resultSet.getBoolean(6), resultSet.getInt(7)));
+				carList.add(new Car(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3),
+						resultSet.getString(4), resultSet.getDouble(5), resultSet.getBoolean(6), resultSet.getInt(7)));
 			}
 
 		} catch (SQLException e) {

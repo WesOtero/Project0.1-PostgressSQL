@@ -5,3 +5,127 @@
 2020-01-21 01:32:49,758 -0500 [main] INFO  (LogUtil.java:26) - User added.
 2020-01-21 01:32:49,758 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
 2020-01-21 01:33:01,153 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 09:58:26,252 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 10:57:53,421 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:14:51,333 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:14:51,696 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:14:51,774 -0500 [main] TRACE (LogUtil.java:30) - ERROR: insert or update on table "offer" violates foreign key constraint "fk_offercarid"
+  Detail: Key (carid)=(1) is not present in table "car".
+2020-01-21 11:14:51,774 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
+2020-01-21 11:14:52,352 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:14:52,390 -0500 [main] INFO  (LogUtil.java:26) - User Record Updated.
+2020-01-21 11:14:52,390 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
+2020-01-21 11:14:52,733 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:14:53,155 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:14:53,202 -0500 [main] INFO  (LogUtil.java:26) - User Record Updated.
+2020-01-21 11:14:53,202 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
+2020-01-21 11:14:53,577 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:14:53,964 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:14:54,011 -0500 [main] INFO  (LogUtil.java:26) - User added.
+2020-01-21 11:14:54,011 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
+2020-01-21 11:14:54,339 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:14:54,386 -0500 [main] INFO  (LogUtil.java:26) - Vehicle added.
+2020-01-21 11:14:54,386 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
+2020-01-21 11:14:54,730 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:14:54,772 -0500 [main] INFO  (LogUtil.java:26) - Last car was return.
+2020-01-21 11:14:54,772 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed.
+2020-01-21 11:14:55,115 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:14:55,510 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:14:55,885 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:16:20,031 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:16:20,411 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:16:20,442 -0500 [main] INFO  (LogUtil.java:26) - Offer added.
+2020-01-21 11:16:20,458 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
+2020-01-21 11:16:20,802 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:16:20,833 -0500 [main] INFO  (LogUtil.java:26) - User Record Updated.
+2020-01-21 11:16:20,833 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
+2020-01-21 11:16:21,177 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:16:21,597 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:16:21,629 -0500 [main] INFO  (LogUtil.java:26) - User Record Updated.
+2020-01-21 11:16:21,644 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
+2020-01-21 11:16:21,987 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:16:22,378 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:16:22,418 -0500 [main] INFO  (LogUtil.java:26) - User added.
+2020-01-21 11:16:22,418 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
+2020-01-21 11:16:22,761 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:16:22,808 -0500 [main] INFO  (LogUtil.java:26) - Vehicle added.
+2020-01-21 11:16:22,808 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
+2020-01-21 11:16:23,152 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:16:23,183 -0500 [main] INFO  (LogUtil.java:26) - Last car was return.
+2020-01-21 11:16:23,183 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed.
+2020-01-21 11:16:23,527 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:16:23,929 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:16:24,320 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:17:09,794 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:17:10,149 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:17:10,181 -0500 [main] INFO  (LogUtil.java:26) - Offer added.
+2020-01-21 11:17:10,196 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
+2020-01-21 11:17:10,526 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:17:10,573 -0500 [main] INFO  (LogUtil.java:26) - User Record Updated.
+2020-01-21 11:17:10,573 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
+2020-01-21 11:17:10,916 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:17:11,319 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:17:11,350 -0500 [main] INFO  (LogUtil.java:26) - User Record Updated.
+2020-01-21 11:17:11,350 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
+2020-01-21 11:17:11,694 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:17:12,084 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:17:12,126 -0500 [main] INFO  (LogUtil.java:26) - User added.
+2020-01-21 11:17:12,126 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
+2020-01-21 11:17:12,459 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:17:12,506 -0500 [main] INFO  (LogUtil.java:26) - Vehicle added.
+2020-01-21 11:17:12,506 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
+2020-01-21 11:17:12,849 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:17:12,880 -0500 [main] INFO  (LogUtil.java:26) - Last car was return.
+2020-01-21 11:17:12,880 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed.
+2020-01-21 11:17:13,224 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:17:13,622 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:17:14,005 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 11:19:46,828 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 13:29:48,562 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 13:33:54,547 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 13:34:39,149 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 13:35:46,290 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 13:39:19,778 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 13:40:07,093 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 13:40:32,701 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 13:41:29,287 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 13:43:01,117 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 13:43:47,070 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 13:44:16,637 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 13:44:47,752 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 13:44:48,169 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 13:45:43,653 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 13:45:44,332 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 13:47:56,260 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 13:47:56,648 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 13:48:54,658 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 13:48:55,086 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 13:48:55,128 -0500 [main] INFO  (LogUtil.java:26) - Success.
+2020-01-21 14:40:03,166 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 14:40:03,608 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 14:40:03,656 -0500 [main] INFO  (LogUtil.java:26) - Success.
+2020-01-21 14:40:08,496 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 15:01:00,644 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 15:01:01,029 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 15:01:01,073 -0500 [main] INFO  (LogUtil.java:26) - Success.
+2020-01-21 15:02:33,932 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 15:03:40,793 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 15:03:41,189 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 15:03:41,231 -0500 [main] INFO  (LogUtil.java:26) - Success.
+2020-01-21 15:03:44,730 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 15:06:08,992 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 15:06:09,387 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 15:06:09,432 -0500 [main] INFO  (LogUtil.java:26) - Success.
+2020-01-21 15:11:49,877 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 15:15:55,896 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 15:15:56,285 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 15:15:56,330 -0500 [main] INFO  (LogUtil.java:26) - Success.
+2020-01-21 15:16:23,532 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 15:16:54,311 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 15:16:56,496 -0500 [main] INFO  (LogUtil.java:26) - User Krista --logged out--
+2020-01-21 15:21:43,087 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 15:21:43,148 -0500 [main] INFO  (LogUtil.java:26) - User added.
+2020-01-21 15:21:43,148 -0500 [main] TRACE (LogUtil.java:30) - Connection Closed
+2020-01-21 15:21:52,606 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 15:21:53,007 -0500 [main] TRACE (LogUtil.java:30) - Connected to DB.
+2020-01-21 15:21:53,067 -0500 [main] INFO  (LogUtil.java:26) - Success.

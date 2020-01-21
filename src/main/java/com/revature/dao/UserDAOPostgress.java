@@ -39,8 +39,8 @@ public class UserDAOPostgress implements UserDAO {
 	}
 
 	@Override
-	public User readUser(int id) {
-		String sql = "Select * from user where userid = '" + id + "'";
+	public User readUser(Integer id) {
+		String sql = "Select * from users where userid =" + id;
 
 		Connection conn = ConnectionFactory.getConnection();
 
@@ -49,7 +49,8 @@ public class UserDAOPostgress implements UserDAO {
 		try {
 			Statement stmt = conn.createStatement();
 			ResultSet resultSet = stmt.executeQuery(sql);
-			user = new User(resultSet.getInt(1), resultSet.getNString(2), resultSet.getNString(3));
+			resultSet.next();
+			user = new User(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3));
 			return user;
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -66,7 +67,7 @@ public class UserDAOPostgress implements UserDAO {
 	//Return user
 	@Override
 	public User readUserByUserame(String username) {
-		String sql = "Select * from user where userid = '" + username + "'";
+		String sql = "Select * from users where usrname ='" + username + "'";
 
 		Connection conn = ConnectionFactory.getConnection();
 
@@ -75,7 +76,9 @@ public class UserDAOPostgress implements UserDAO {
 		try {
 			Statement stmt = conn.createStatement();
 			ResultSet resultSet = stmt.executeQuery(sql);
-			user = new User(resultSet.getInt(1), resultSet.getNString(2), resultSet.getNString(3));
+			resultSet.next();
+			System.out.println(resultSet.getString(2) + "<");
+			user = new User(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3));
 			return user;
 		} catch (SQLException e) {
 			e.printStackTrace();

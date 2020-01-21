@@ -8,7 +8,7 @@ public interface UserDAO {
 
 	public void createUser(User pet);
 
-	public User readUser(int id);
+	public User readUser(Integer id);
 
 	public User readUserByUserame(String username);
 	

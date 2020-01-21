@@ -19,37 +19,16 @@ public class Driver {
 		mainMenu();
 
 	}
-//TODO: Remove Init if not needed
-	// Init No longer needed
-//	public static void init() {
-//		File[] files = { new File("customerUserBase.dat"), new File("employeeUserBase.dat"), new File("carLot.dat") };
-//
-//		if (files[0].exists() && files[1].exists() && files[2].exists()) {
-//			UserDAO userDAO = new UserDAO();
-//			userDAO.readCustomers();
-//			userDAO.readEmployees();
-//			CarDAO carDAO = new CarDAO();
-//			carDAO.readCarDB();
-//			LoggerUtil.info("Application ran successfully");
-//		} else {
-//			for (File file : files) {
-//				try {
-//					LoggerUtil.info("File created.");
-//					file.createNewFile();
-//				} catch (IOException e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		}
-//	}
 
 	// Main Menu
 	public static void mainMenu() {
 
 		Boolean run = true;
-		Scanner scanner = new Scanner(System.in);
 
 		while (run) {
+
+			Scanner scanner = new Scanner(System.in);
+
 			String userInput;
 
 			System.out.println("\n----Main Menu----");
@@ -89,46 +68,27 @@ public class Driver {
 
 		Scanner scanner = new Scanner(System.in);
 
-		// Prompt
-		System.out.println("\n----LOGIN MENU----");
-		System.out.println("|-1. Login: \n|-2. Main Menu: ");
+		// CUSTOMER LOGIN
+
+		System.out.println("\nUsername: ");
 		userInput = scanner.nextLine();
+		username = userInput;
 
-		switch (userInput) {
-		case "1":
-			// CUSTOMER LOGIN
+		System.out.println("Password : ");
+		userInput = scanner.nextLine();
+		password = userInput;
 
-			System.out.println("\nUsername: ");
-			userInput = scanner.nextLine();
-			username = userInput;
-
-			System.out.println("Password : ");
-			userInput = scanner.nextLine();
-			password = userInput;
-
-			User tempUser = authServ.getUserByUsername(username);
-			if (authServ.authenticate(tempUser.getUserid(), username, password)) {
-				if (tempUser.isEmployee_role()) {
-					employeeMenu(tempUser);
-				} else {
-					customerMenu(tempUser);
-				}
-				
+		User tempUser = authServ.getUserByUsername(username);
+		if (authServ.authenticate(tempUser.getUserid(), username, password)) {
+			if (tempUser.isEmployee_role()) {
+				employeeMenu(tempUser);
 			} else {
-				LogUtil.info("Login failed");
-				loginMenu();
+				customerMenu(tempUser);
 			}
 
-			break;
-
-		case "2":
-			// GO BACK
-			mainMenu();
-
-			break;
-
-		default:
-			break;
+		} else {
+			LogUtil.info("Login failed");
+			loginMenu();
 		}
 
 	}
@@ -139,36 +99,17 @@ public class Driver {
 		String userInput, username, password;
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.println("\n----REGISTRATION MENU----");
-		System.out.println("|-1. Customer Registration: \n|-2. Main Menu: ");
-
+		System.out.println("--REGISTER USER--");
+		System.out.println("Username: ");
 		userInput = scanner.nextLine();
+		username = userInput;
 
-		switch (userInput) {
-		case "1":
+		System.out.println("Password : ");
+		userInput = scanner.nextLine();
+		password = userInput;
 
-			System.out.println("--REGISTER USER--");
-			System.out.println("Username: ");
-			userInput = scanner.nextLine();
-			username = userInput;
-
-			System.out.println("Password : ");
-			userInput = scanner.nextLine();
-			password = userInput;
-
-			signUpServ.signup(username, password);
-			loginMenu();
-			break;
-
-		case "2":
-			// GO BACK
-			mainMenu();
-			break;
-
-		default:
-			System.out.println("Invalid choice, try again...");
-			break;
-		}
+		signUpServ.signup(username, password);
+		mainMenu();
 	}
 
 	// CustomerMenu
@@ -242,7 +183,7 @@ public class Driver {
 		OfferService offerServ = new OfferService();
 		CarRemovalService carRemvServ = new CarRemovalService();
 		PaymentService payServ = new PaymentService();
-		
+
 		String userInput, offerId, carId, make, model, year, customer;
 		Double price;
 		Scanner scanner = new Scanner(System.in);
@@ -261,14 +202,14 @@ public class Driver {
 				make = scanner.nextLine();
 				System.out.println("Enter Model:");
 				model = scanner.nextLine();
-				//Format this
+				// Format this
 				System.out.println("Enter Year:");
 				year = scanner.nextLine();
 				System.out.println("Enter price:");
 				price = Double.parseDouble(scanner.nextLine());
-				
+
 				addCarServ.addCar(make, model, year, price);
-				
+
 				make = "";
 				model = "";
 				year = "";
@@ -279,7 +220,7 @@ public class Driver {
 			employeeMenu(user);
 			break;
 		case "2":
-			//Not needed
+			// Not needed
 //			carViewServ.employeeCarView();
 			employeeMenu(user);
 			break;
@@ -287,9 +228,9 @@ public class Driver {
 			System.out.println("\n==ACCEPT OFFER==");
 			System.out.println("Enter VIN: ");
 			carId = scanner.nextLine();
-			//TODO: FIX
+			// TODO: FIX
 			viewCarServ.customerCarView();
-			
+
 			System.out.println("Do you want to accept any offers?");
 			userInput = scanner.nextLine();
 			switch (userInput.toUpperCase()) {
