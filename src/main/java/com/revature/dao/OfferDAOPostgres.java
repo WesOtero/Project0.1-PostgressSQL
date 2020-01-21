@@ -1,6 +1,7 @@
 package com.revature.dao;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
@@ -39,8 +40,28 @@ public class OfferDAOPostgres implements OfferDAO {
 	}
 
 	@Override
-	public Offer readOffer(int id) {
-		// TODO Auto-generated method stub
+	public Offer readOffer(Integer userId, Integer carId) {
+		String sql = "Select * from user where userid = '" + userId + "AND carid ='" + carId+"'";
+
+		Connection conn = ConnectionFactory.getConnection();
+
+		Offer offer;
+
+		try {
+			Statement stmt = conn.createStatement();
+			ResultSet resultSet = stmt.executeQuery(sql);
+			offer = new Offer(resultSet.getInt(1), resultSet.getDouble(2), resultSet.getBoolean(3),
+					resultSet.getBoolean(4), resultSet.getInt(5), resultSet.getInt(6));
+			return offer;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 		return null;
 	}
 

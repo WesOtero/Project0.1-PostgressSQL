@@ -7,7 +7,7 @@ import com.revature.pojo.Payment;
 public interface PaymentDAO {
 	
 	//Creates and calculates Payment
-	public void createPayment(Integer userId, Integer carId, Integer offerId);
+	public void createPayment(Integer userId, Integer carId, Double amount);
 
 	public Payment readPayment(int id);
 

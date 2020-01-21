@@ -72,7 +72,7 @@ public class Car {
 	}
 	
 	//For Reading from DB
-	public Car(Integer carid,String make, String model, String year, Double price) {
+	public Car(Integer carid, String make, String model, String year, Double price, boolean owners, Integer userId) {
 		super();
 		this.carId = carid;
 		this.make = make;

@@ -13,6 +13,6 @@ public interface PaymentActions {
 	public void createPayments(Integer userId, Integer carId, Integer offerId);
 	
 	//Does the calculation by diving the offer amount buy 24 months.
-	public Double calculatePayment(Integer userId, Integer carId, Integer offetId);
+	public Double calculatePayment(Integer userId, Integer carId);
 
 }

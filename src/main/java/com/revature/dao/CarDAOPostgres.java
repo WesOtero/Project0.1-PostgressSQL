@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.revature.pojo.Car;
+import com.revature.pojo.User;
 import com.revature.util.ConnectionFactory;
 import com.revature.util.LogUtil;
 
@@ -40,7 +41,27 @@ public class CarDAOPostgres implements CarDAO {
 
 	@Override
 	public Car readCar(int id) {
+		String sql = "Select * from user where userid = '" + id + "'";
 
+		Connection conn = ConnectionFactory.getConnection();
+
+		Car car;
+
+		try {
+			Statement stmt = conn.createStatement();
+			ResultSet resultSet = stmt.executeQuery(sql);
+			car = new Car(resultSet.getInt(1), resultSet.getNString(2), resultSet.getNString(3),
+					resultSet.getNString(4), resultSet.getDouble(5), resultSet.getBoolean(6), resultSet.getInt(7));
+			return car;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 		return null;
 	}
 
@@ -50,7 +71,8 @@ public class CarDAOPostgres implements CarDAO {
 
 	}
 
-	//After car is deleted the next time the user request to view the lot it should query the table again.
+	// After car is deleted the next time the user request to view the lot it should
+	// query the table again.
 	@Override
 	public void deleteCar(Integer carId) {
 		// TODO Auto-generated method stub
@@ -71,7 +93,7 @@ public class CarDAOPostgres implements CarDAO {
 				e.printStackTrace();
 			}
 		}
-		
+
 	}
 
 	@Override
@@ -87,8 +109,8 @@ public class CarDAOPostgres implements CarDAO {
 			ResultSet resultSet = stmt.executeQuery(sql);
 
 			while (resultSet.next()) {
-				carList.add(new Car(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3),
-						resultSet.getString(4), resultSet.getDouble(5)));
+				carList.add(new Car(resultSet.getInt(1), resultSet.getNString(2), resultSet.getNString(3),
+						resultSet.getNString(4), resultSet.getDouble(5), resultSet.getBoolean(6), resultSet.getInt(7)));
 			}
 
 		} catch (SQLException e) {
@@ -102,9 +124,8 @@ public class CarDAOPostgres implements CarDAO {
 		}
 		return carList;
 	}
-	
 
-	public List<Car> readAllCarsOnLot(){
+	public List<Car> readAllCarsOnLot() {
 		String sql = "Select * from car where owners = false";
 
 		Connection conn = ConnectionFactory.getConnection();
@@ -116,8 +137,8 @@ public class CarDAOPostgres implements CarDAO {
 			ResultSet resultSet = stmt.executeQuery(sql);
 
 			while (resultSet.next()) {
-				carList.add(new Car(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3),
-						resultSet.getString(4), resultSet.getDouble(5)));
+				carList.add(new Car(resultSet.getInt(1), resultSet.getNString(2), resultSet.getNString(3),
+						resultSet.getNString(4), resultSet.getDouble(5), resultSet.getBoolean(6), resultSet.getInt(7)));
 			}
 
 		} catch (SQLException e) {
@@ -147,8 +168,8 @@ public class CarDAOPostgres implements CarDAO {
 			ResultSet resultSet = stmt.executeQuery(sql);
 
 			while (resultSet.next()) {
-				carOwnedList.add(new Car(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3),
-						resultSet.getString(4), resultSet.getDouble(5)));
+				carOwnedList.add(new Car(resultSet.getInt(1), resultSet.getNString(2), resultSet.getNString(3),
+						resultSet.getNString(4), resultSet.getDouble(5), resultSet.getBoolean(6), resultSet.getInt(7)));
 			}
 
 		} catch (SQLException e) {
@@ -156,7 +177,7 @@ public class CarDAOPostgres implements CarDAO {
 		} finally {
 			try {
 				conn.close();
-				
+
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

@@ -55,14 +55,15 @@ public class Offer {
 	}
 	
 	//Read offer constructor
-//	public Offer(Integer carId, Integer userId, Double amount, boolean accepted, boolean removed) {
-//		super();
-//		this.carId = carId;
-//		this.userId = userId;
-//		this.amount = amount;
-//		this.accepted = accepted;
-//		this.removed = removed;
-//	}
+	public Offer(Integer offerId, Double amount, boolean accepted, boolean removed, Integer userId, Integer carId) {
+		super();
+		this.offerId = offerId;
+		this.amount = amount;
+		this.accepted = accepted;
+		this.removed = removed;
+		this.carId = carId;
+		this.userId = userId;
+	}
 	
 	
 	

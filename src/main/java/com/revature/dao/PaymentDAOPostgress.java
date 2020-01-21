@@ -11,8 +11,9 @@ import com.revature.util.LogUtil;
 
 public class PaymentDAOPostgress implements PaymentDAO {
 
+	//Happens last
 	@Override
-	public void createPayment(Integer userId, Integer carId, Integer offerId) {
+	public void createPayment(Integer userId, Integer carId, Double amount) {
 		// TODO Auto-generated method stub
 		
 		String sql = "insert into offer(userid, carid) values('" + userId + "', '" + carId + "')";

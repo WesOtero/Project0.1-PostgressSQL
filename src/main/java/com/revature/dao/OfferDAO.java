@@ -7,7 +7,7 @@ import com.revature.pojo.Offer;
 public interface OfferDAO {
 	public void createOffer(Offer offer);
 
-	public Offer readOffer(int id);
+	public Offer readOffer(Integer userId, Integer carId);
 
 	public void updateOffer(Offer offer, int id);
 
