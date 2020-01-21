@@ -79,6 +79,7 @@ public class Project0Test {
 	public void testViewAllPayments() {
 		PaymentService payServ = new PaymentService();
 		payServ.viewAllPayments();
+		assertTrue(false);
 	}
 
 	// -As an employee, I can add a car to the lot.
