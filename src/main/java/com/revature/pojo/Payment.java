@@ -45,6 +45,15 @@ public class Payment {
 		this.carId = carId;
 		this.datetime  = dtf.format(now); 
 	}
+	public Payment(Integer paymentId, String datetime, Integer userId, Integer carId) {
+		super();
+		this.paymentId = paymentId;
+		this.datetime = datetime;
+		this.userId = userId;
+		this.carId = carId;
+	}
+	
+	
 	
 	
 }

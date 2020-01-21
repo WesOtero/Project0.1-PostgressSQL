@@ -5,6 +5,7 @@ import com.revature.dao.OfferDAOPostgres;
 import com.revature.dao.PaymentDAOPostgress;
 import com.revature.dao.UserDAOPostgress;
 import com.revature.pojo.Offer;
+import com.revature.pojo.User;
 
 public class PaymentService implements PaymentActions {
 
@@ -51,6 +52,13 @@ public class PaymentService implements PaymentActions {
 		// System calculates the rate of the payment
 		amount = offer.getAmount() / 24;
 		return amount;
+	}
+
+	@Override
+	public void userRemaningBlance(Integer userId) {
+		UserDAOPostgress userDAO = new UserDAOPostgress();
+		User user = userDAO.readUser(userId);
+		System.out.println(user.getRemainingBalance());
 	}
 
 }

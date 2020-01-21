@@ -102,4 +102,9 @@ public class UserDAOPostgress implements UserDAO {
 		return null;
 	}
 
+	@Override
+	public void viewRemainingBalance(Integer userId) {
+		// TODO Auto-generated method stub
+	}
+
 }

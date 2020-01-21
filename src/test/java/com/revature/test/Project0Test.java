@@ -8,7 +8,6 @@ import java.util.List;
 import org.junit.Test;
 
 import com.revature.dao.CarDAOPostgres;
-import com.revature.dao.OfferDAOPostgres;
 import com.revature.pojo.Car;
 import com.revature.services.AuthenticationService;
 import com.revature.services.CarRemovalService;
@@ -59,9 +58,11 @@ public class Project0Test {
 		assertTrue(false);
 	}
 
-	// As a customer, I can view my remaining payments for a car.
+	// -As a customer, I can view my remaining payments for a car.
 	@Test
-	public void testRemainingPayments() {
+	public void testRemainingPayments(Integer userId) {
+		PaymentService paymentServ = new PaymentService();
+		paymentServ.userRemaningBlance(userId);
 		assertTrue(false);
 	}
 
@@ -76,7 +77,8 @@ public class Project0Test {
 	// As an employee, I can view all payments.
 	@Test
 	public void testViewAllPayments() {
-		assertTrue(false);
+		PaymentService payServ = new PaymentService();
+		payServ.viewAllPayments();
 	}
 
 	// -As an employee, I can add a car to the lot.

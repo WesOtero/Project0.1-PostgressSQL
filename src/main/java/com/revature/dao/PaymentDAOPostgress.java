@@ -1,8 +1,10 @@
 package com.revature.dao;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.revature.pojo.Payment;
@@ -57,14 +59,63 @@ public class PaymentDAOPostgress implements PaymentDAO {
 
 	@Override
 	public List<Payment> readAllPayment() {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "Select * from payment";
+
+		Connection conn = ConnectionFactory.getConnection();
+
+		List<Payment> payments = new ArrayList<>();
+
+		try {
+			Statement stmt = conn.createStatement();
+			ResultSet resultSet = stmt.executeQuery(sql);
+
+			while (resultSet.next()) {
+				payments.add(new Payment(resultSet.getInt(1), resultSet.getNString(2), resultSet.getInt(3), resultSet.getInt(4)));
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return payments;
 	}
 
 	@Override
-	public List<Payment> readPaymentByType(String type) {
+	public List<Payment> readUserPayment(Integer userId) {
 		// TODO Auto-generated method stub
-		return null;
+		String sql = "Select * from payment where userid =" + userId;
+
+		Connection conn = ConnectionFactory.getConnection();
+
+		List<Payment> payments = new ArrayList<>();
+
+		try {
+			Statement stmt = conn.createStatement();
+			ResultSet resultSet = stmt.executeQuery(sql);
+
+			while (resultSet.next()) {
+				payments.add(new Payment(resultSet.getInt(1), resultSet.getNString(2), resultSet.getInt(3), resultSet.getInt(4)));
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return payments;
 	}
+	
+	
 
 }
